@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P&amp;A Auto Collision Repair (website concept)</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Website concept for P&amp;A Auto Collision Repair in Huntington Station, NY: collision, bumper and light repair, plus help with insurance claims. Rated 4.9 from 41 Google reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:32px;--s6:48px;--s7:72px;--s8:112px;
+  --white:#fff;--steel:#eceff2;--steel-2:#dde2e7;--steel-d:#aab3bd;--steel-dd:#6b7682;
+  --graph:#0f1720;--graph-2:#18222d;--graph-3:#243140;
+  --blue:#1463ff;--blue-d:#0b4fd6;--blue-l:#e5eeff;--blue-glow:#5a93ff;
+  --ink:#0f1720;--soft:#46525f;--line:#cfd5dc;
+  --tech:"Chakra Petch","Arial Narrow",system-ui,sans-serif;
+  --body:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --cut:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--tech);font-weight:700;line-height:1.02;margin:0;letter-spacing:-.005em}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--s5)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--blue-glow)}
+.skip{position:absolute;left:-999px;background:#fff;padding:var(--s2) var(--s3);z-index:99}
+.skip:focus{left:var(--s3);top:var(--s3)}
+section{scroll-margin-top:80px}
+.mono{font-family:var(--tech);font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+
+.concept{background:var(--steel);color:#2b3540;font-size:14px;text-align:center;padding:var(--s2) var(--s3);border-bottom:1px solid var(--line)}
+.concept a{color:var(--blue-d);font-weight:700}
+
+header.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;gap:var(--s4);min-height:72px}
+.logo{display:flex;align-items:center;gap:var(--s3);text-decoration:none;margin-right:auto}
+.logo svg{width:46px;height:46px;flex:none}
+.logo b{display:block;font-family:var(--tech);font-weight:700;font-size:23px;line-height:1}
+.logo small{display:block;font-family:var(--tech);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-dd);margin-top:3px}
+nav#nav ul{list-style:none;margin:0;padding:0;display:flex}
+nav#nav a{display:flex;align-items:center;min-height:44px;padding:0 var(--s3);text-decoration:none;font-family:var(--tech);font-weight:600;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);position:relative}
+nav#nav a::after{content:"";position:absolute;left:var(--s3);right:var(--s3);bottom:6px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+nav#nav a:hover::after{transform:scaleX(1)}
+.hdr-call{display:inline-flex;align-items:center;gap:var(--s2);min-height:48px;padding:0 var(--s4);background:var(--blue);color:#fff;text-decoration:none;font-family:var(--tech);font-weight:700;font-size:18px;letter-spacing:.04em;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));white-space:nowrap}
+.hdr-call:hover{background:var(--blue-d)}
+.menu-btn{display:none;width:48px;height:48px;border:1.5px solid var(--ink);background:none;cursor:pointer;color:var(--ink)}
+.menu-btn span{display:block;width:20px;height:2px;margin:4px auto;background:currentColor;transition:transform .2s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s3);min-height:54px;padding:0 var(--s5);font-family:var(--tech);font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));transition:background .2s}
+.btn{line-height:1.2;padding-top:var(--s2);padding-bottom:var(--s2);text-align:center}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-d)}
+.btn-ink{background:var(--graph);color:#fff}
+.btn-ink:hover{background:var(--graph-3)}
+.btn-steel{background:var(--steel-2);color:var(--ink)}
+.btn-steel:hover{background:var(--steel-d)}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(180deg,#f6f8fa,#e7ebef);border-bottom:1px solid var(--line);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px;opacity:.55;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:var(--s6);align-items:center;padding-top:var(--s7);padding-bottom:var(--s7)}
+.coord{display:flex;gap:var(--s4);font-size:14px;color:var(--steel-dd)}
+.coord span b{color:var(--blue-d)}
+.hero h1{font-size:clamp(50px,6.6vw,96px);margin:var(--s4) 0;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero .lede{font-size:20px;color:var(--soft);max-width:30em}
+.hero .actions{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
+.drawing{position:relative;background:rgba(255,255,255,.75);border:1px solid var(--steel-d);padding:var(--s4)}
+.drawing::before,.drawing::after{content:"";position:absolute;width:18px;height:18px;border:2px solid var(--blue)}
+.drawing::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.drawing::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.drawing svg{width:100%;height:auto}
+.dhead{display:flex;justify-content:space-between;font-size:13px;color:var(--steel-dd);margin-bottom:var(--s2)}
+.scan{animation:scan 5s ease-in-out infinite}
+@keyframes scan{0%,100%{transform:translateY(0)}50%{transform:translateY(300px)}}
+.call-dot{animation:blink 2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+
+/* readout */
+.readout{background:var(--graph);color:#fff}
+.readout ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.readout li{padding:var(--s4) var(--s4);border-left:1px solid var(--graph-3)}
+.readout li:first-child{border-left:0;padding-left:0}
+.readout small{display:block;font-family:var(--tech);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#9fb0c2}
+.readout b{font-family:var(--tech);font-size:32px;font-weight:700}
+.readout b i{font-style:normal;color:var(--blue-glow)}
+
+.sec{padding:var(--s8) 0}
+.sec-top{display:grid;grid-template-columns:200px 1fr;gap:var(--s5);margin-bottom:var(--s6);align-items:start}
+.idx{font-family:var(--tech);font-weight:600;font-size:15px;letter-spacing:.16em;color:var(--blue-d);padding-top:var(--s3);border-top:2px solid var(--blue)}
+.sec h2{font-size:clamp(38px,4.8vw,64px);text-transform:uppercase}
+.sec-top p{margin-top:var(--s3);color:var(--soft);font-size:19px;max-width:38em}
+
+/* spec sheet */
+.spec-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:var(--s6);align-items:start}
+.spec{width:100%;border-collapse:collapse;border-top:2px solid var(--ink)}
+.spec th{text-align:left;font-family:var(--tech);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-dd);padding:var(--s3) var(--s3) var(--s3) 0;border-bottom:1px solid var(--line)}
+.spec td{padding:var(--s4) var(--s3) var(--s4) 0;border-bottom:1px solid var(--line);vertical-align:top}
+.spec tr.row{cursor:pointer;transition:background .2s}
+.spec tr.row:hover,.spec tr.row.on{background:var(--blue-l)}
+.spec tr.row:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.spec .code{font-family:var(--tech);font-weight:700;color:var(--blue-d);white-space:nowrap;padding-left:var(--s3)}
+.spec .name{font-family:var(--tech);font-weight:700;font-size:24px;line-height:1.1}
+.spec .desc{color:var(--soft);font-size:17px}
+.side{position:sticky;top:96px;background:var(--steel);border:1px solid var(--line);padding:var(--s5)}
+.side svg{width:100%;height:auto}
+.side .cap{font-family:var(--tech);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel-dd);margin-top:var(--s3)}
+.side .cap b{color:var(--blue-d)}
+.part{transition:fill .25s,stroke .25s}
+.part.hl{fill:var(--blue)!important;stroke:var(--blue-d)!important}
+
+/* claim tool */
+.claim{background:var(--graph);color:#fff}
+.claim .idx{color:var(--blue-glow);border-color:var(--blue-glow)}
+.claim .sec-top p{color:#c3cfdb}
+.claim-grid{display:grid;grid-template-columns:320px 1fr;gap:var(--s6);align-items:start}
+.gauge{position:sticky;top:96px;background:var(--graph-2);border:1px solid var(--graph-3);padding:var(--s5)}
+.gauge svg{width:180px;height:180px;margin:0 auto}
+.ring-bg{fill:none;stroke:var(--graph-3);stroke-width:12}
+.ring{fill:none;stroke:var(--blue-glow);stroke-width:12;stroke-linecap:butt;transform:rotate(-90deg);transform-origin:center;transition:stroke-dashoffset .5s}
+.gauge .pct{font-family:var(--tech);font-weight:700;font-size:44px;fill:#fff}
+.gauge .sub{font-family:var(--tech);font-size:13px;letter-spacing:.14em;fill:#9fb0c2}
+.next{margin-top:var(--s4);padding-top:var(--s4);border-top:1px solid var(--graph-3)}
+.next small{display:block;font-family:var(--tech);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#9fb0c2}
+.next b{font-family:var(--tech);font-size:22px}
+.gauge .btn{margin-top:var(--s4);width:100%}
+.reset{margin-top:var(--s3);background:none;border:1px solid var(--graph-3);color:#c3cfdb;min-height:44px;width:100%;font:600 15px var(--body);cursor:pointer}
+.reset:hover{border-color:#9fb0c2;color:#fff}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.step{position:relative;display:grid;grid-template-columns:56px 1fr;gap:var(--s4);padding:var(--s4) 0;border-top:1px solid var(--graph-3)}
+.step:last-child{border-bottom:1px solid var(--graph-3)}
+.step .box{position:relative;width:48px;height:48px}
+.step input[type=checkbox]{appearance:none;-webkit-appearance:none;margin:0;width:48px;height:48px;border:2px solid #5d6e80;background:transparent;cursor:pointer;display:block}
+.step input[type=checkbox]:checked{background:var(--blue);border-color:var(--blue)}
+.step input[type=checkbox]:focus-visible{outline:3px solid var(--blue-glow);outline-offset:3px}
+.step .box svg{position:absolute;inset:0;margin:auto;width:26px;height:26px;pointer-events:none;opacity:0}
+.step input:checked+svg{opacity:1}
+.step label{font-family:var(--tech);font-weight:700;font-size:24px;cursor:pointer;display:block;line-height:1.2}
+.step label span{color:#9fb0c2;font-size:15px;letter-spacing:.14em;margin-right:var(--s2)}
+.step p{color:#c3cfdb;font-size:17px;margin-top:var(--s1)}
+.step.done label{color:#9fb0c2;text-decoration:line-through;text-decoration-color:var(--blue-glow)}
+.step .field{margin-top:var(--s3);display:flex;flex-direction:column;gap:var(--s1);max-width:360px}
+.step .field label{font-family:var(--body);font-size:15px;font-weight:600;color:#c3cfdb}
+.step .field input{font:inherit;font-size:17px;min-height:48px;padding:0 var(--s3);background:var(--graph-2);border:1px solid #5d6e80;color:#fff}
+.step .field input:focus{outline:none;border-color:var(--blue-glow);box-shadow:0 0 0 3px rgba(90,147,255,.3)}
+.law{margin-top:var(--s5);display:grid;grid-template-columns:auto 1fr;gap:var(--s4);padding:var(--s4) var(--s5);background:var(--blue);color:#fff;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.law svg{width:44px;height:44px}
+.law h3{font-size:24px;margin-bottom:var(--s1)}
+.law p{font-size:17px}
+.fine{font-size:14px;margin-top:var(--s4);color:#9fb0c2}
+.fine b{color:#fff}
+
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--s6);align-items:start}
+.lead-q{border-left:6px solid var(--blue);padding:var(--s2) 0 var(--s2) var(--s5)}
+.lead-q blockquote{margin:0;font-family:var(--tech);font-weight:600;font-size:clamp(30px,3.4vw,46px);line-height:1.12}
+.lead-q cite{display:block;margin-top:var(--s4);font-style:normal;color:var(--soft)}
+.lead-q cite b{color:var(--ink)}
+.score{margin-top:var(--s6);display:flex;align-items:flex-end;gap:var(--s4)}
+.score b{font-family:var(--tech);font-size:96px;line-height:.85;color:var(--blue-d)}
+.score span{color:var(--soft);font-size:17px;padding-bottom:var(--s1)}
+.qlist{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.qlist li{display:grid;grid-template-columns:56px 1fr;gap:var(--s3);padding:var(--s4) 0;border-bottom:1px solid var(--line)}
+.qlist .n{font-family:var(--tech);font-weight:700;color:var(--blue-d);font-size:15px;letter-spacing:.1em;padding-top:6px}
+.qlist blockquote{margin:0;font-size:20px;line-height:1.45}
+.qlist cite{display:block;font-style:normal;font-size:15px;color:var(--soft);margin-top:var(--s2)}
+
+/* visit + form */
+.est{background:var(--steel);border-top:1px solid var(--line)}
+.est-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:var(--s6);align-items:start}
+.loc{background:#fff;border:1px solid var(--line);padding:var(--s5)}
+.loc .addr{font-family:var(--tech);font-weight:700;font-size:clamp(30px,3.2vw,42px);line-height:1.05;margin:var(--s2) 0 var(--s4)}
+.loc dl{margin:0}
+.loc dl div{display:grid;grid-template-columns:110px 1fr;gap:var(--s3);padding:var(--s3) 0;border-top:1px solid var(--line)}
+.loc dt{font-family:var(--tech);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-dd);padding-top:4px}
+.loc dd{margin:0}
+.loc a{color:var(--blue-d);font-weight:700}
+.loc svg{margin-top:var(--s4);width:100%;height:auto;border:1px solid var(--line)}
+.formcard{background:#fff;border:1px solid var(--line);padding:var(--s5)}
+form.demo{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.f{display:flex;flex-direction:column;gap:var(--s2);min-width:0}
+.f.full{grid-column:1/-1}
+.f>label,.f legend{font-weight:700;font-size:16px}
+.f input:not([type=checkbox]):not([type=radio]),.f select,.f textarea{font:inherit;font-size:17px;min-height:52px;padding:var(--s3);border:1.5px solid var(--steel-d);background:var(--steel);color:var(--ink);width:100%;border-radius:0}
+.f textarea{min-height:110px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(20,99,255,.2)}
+fieldset.f{border:0;padding:0;margin:0}
+.chks{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.chk{position:relative}
+.chk input{position:absolute;opacity:0;width:1px;height:1px}
+.chk span{display:flex;align-items:center;min-height:44px;padding:0 var(--s3);border:1.5px solid var(--steel-d);font-size:16px;font-weight:600;cursor:pointer;background:var(--steel)}
+.chk input:checked+span{background:var(--blue);border-color:var(--blue);color:#fff}
+.chk input:focus-visible+span{outline:3px solid var(--blue);outline-offset:2px}
+[aria-invalid="true"]{border-color:#c4231b!important;background:#fff3f2!important}
+.form-msg{grid-column:1/-1;color:#b01f17;font-weight:700}
+.form-msg:empty{display:none}
+.submit-row{grid-column:1/-1;display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2)}
+.demo-note{font-size:14px;color:var(--soft)}
+.done{background:var(--graph);color:#fff;padding:var(--s6) var(--s5)}
+.done h3{font-size:40px;margin-bottom:var(--s3);text-transform:uppercase}
+.done p{color:#c3cfdb;margin-bottom:var(--s4)}
+
+footer.site{background:var(--graph);color:#c3cfdb;padding:var(--s7) 0 var(--s6);font-size:15px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--s6);padding-bottom:var(--s5);border-bottom:1px solid var(--graph-3)}
+footer.site h3{color:#fff;font-size:20px;margin-bottom:var(--s2);text-transform:uppercase;letter-spacing:.06em}
+footer.site a{color:#fff}
+.disc{margin-top:var(--s5);font-size:14px;color:#a9b6c4;max-width:72em}
+.disc p+p{margin-top:var(--s2)}
+.sticky-call{display:none}
+
+@media (max-width:1040px){
+  .hero-grid,.spec-grid,.claim-grid,.rev-grid,.est-grid{grid-template-columns:1fr}
+  .side,.gauge{position:static}
+  .gauge{display:grid;grid-template-columns:180px 1fr;gap:var(--s4);align-items:center}
+  .gauge .next{margin-top:0;padding-top:0;border-top:0}
+  .gauge .btn,.gauge .reset{grid-column:1/-1}
+  .sec-top{grid-template-columns:1fr;gap:var(--s3)}
+  .idx{width:200px}
+  .menu-btn{display:block}
+  .hdr{position:relative}
+  nav#nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line)}
+  nav#nav.open{display:block}
+  nav#nav ul{flex-direction:column;padding:var(--s2) var(--s4) var(--s4)}
+  nav#nav a{min-height:52px;border-bottom:1px solid var(--steel-2)}
+  nav#nav a::after{display:none}
+  .hdr-call{display:none}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:17px;padding-bottom:78px}
+  .wrap{padding:0 var(--s3)}
+  .sec{padding:var(--s7) 0}
+  .hero-grid{padding-top:var(--s6);padding-bottom:var(--s6)}
+  .hero .lede{font-size:18px}
+  .coord{flex-direction:column;gap:0}
+  .btn{width:100%}
+  .logo b{font-size:19px}
+  .logo svg{width:40px;height:40px}
+  .drawing{padding:var(--s3)}
+  .readout ul{grid-template-columns:1fr 1fr}
+  .readout li{padding:var(--s3) 0 var(--s3) var(--s3)}
+  .readout li:nth-child(odd){border-left:0;padding-left:0}
+  .readout li:nth-child(n+3){border-top:1px solid var(--graph-3)}
+  .readout b{font-size:26px}
+  .spec thead{display:none}
+  .spec,.spec tbody,.spec tr,.spec td{display:block;width:100%}
+  .spec tr.row{padding:var(--s3) var(--s3);border-bottom:1px solid var(--line)}
+  .spec td{border:0;padding:var(--s1) 0}
+  .spec .code{padding-left:0}
+  .side{padding:var(--s3)}
+  .gauge{grid-template-columns:1fr;padding:var(--s4)}
+  .gauge svg{width:150px;height:150px}
+  .step{grid-template-columns:48px 1fr;gap:var(--s3)}
+  .step label{font-size:20px}
+  .law{grid-template-columns:1fr;padding:var(--s4)}
+  .lead-q{padding-left:var(--s4)}
+  .score b{font-size:72px}
+  .qlist li{grid-template-columns:52px 1fr}
+  .qlist .n{white-space:nowrap;font-size:14px}
+  .readout b{font-size:24px}
+  .qlist blockquote{font-size:18px}
+  .loc,.formcard{padding:var(--s4)}
+  .loc dl div{grid-template-columns:1fr;gap:var(--s1)}
+  form.demo{grid-template-columns:1fr}
+  .done{padding:var(--s5) var(--s4)}
+  .foot{grid-template-columns:1fr}
+  .sticky-call{display:flex;position:fixed;left:var(--s3);right:var(--s3);bottom:var(--s3);z-index:50;min-height:56px;align-items:center;justify-content:center;background:var(--blue);color:#fff;text-decoration:none;font-family:var(--tech);font-weight:700;font-size:20px;letter-spacing:.04em;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept">Website concept by <a href="https://www.lisettecolon.com">Lisette Colon</a>. A sample, not the official P&amp;A Auto Collision Repair site.</div>
+
+<header class="top">
+  <div class="wrap hdr">
+    <a class="logo" href="#top" aria-label="P and A Auto Collision Repair, home">
+      <svg viewBox="0 0 46 46" aria-hidden="true"><path d="M8 0 H46 V38 L38 46 H0 V8 Z" fill="#0f1720"/><path d="M11 33 V13 H19 Q25 13 25 19 Q25 25 19 25 H11" fill="none" stroke="#fff" stroke-width="3.5"/><path d="M24 33 L31 13 L38 33 M27 27 H35" fill="none" stroke="#5a93ff" stroke-width="3.5" stroke-linejoin="round"/></svg>
+      <span><b>P&amp;A Auto Collision</b><small>Huntington Station</small></span>
+    </a>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#claim">Claim checklist</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#estimate">Estimate</a></li>
+      </ul>
+    </nav>
+    <a class="hdr-call" href="tel:+16318946542">(631) 894-6542</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="coord mono"><span>166 Depot Rd</span><span>Huntington Station, NY</span></p>
+      <h1>Collision repair, <em>measured twice.</em></h1>
+      <p class="lede">Bumpers, lights and body damage repaired with care for the details, and help with your insurance claim from start to finish. Paul and his team see it through from drop-off to pickup.</p>
+      <div class="actions">
+        <a class="btn btn-blue" href="tel:+16318946542">Call (631) 894-6542</a>
+        <a class="btn btn-steel" href="#claim">Start the claim checklist</a>
+      </div>
+    </div>
+    <div class="drawing" aria-hidden="true">
+      <div class="dhead mono"><span>Front elevation</span><span>Damage map / sample</span></div>
+      <svg viewBox="0 0 600 420">
+        <defs>
+          <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#1463ff" stroke-width="2"/></pattern>
+          <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1463ff" stop-opacity="0"/><stop offset="1" stop-color="#1463ff" stop-opacity=".18"/></linearGradient>
+        </defs>
+        <g fill="none" stroke="#0f1720" stroke-width="2.5" stroke-linejoin="round">
+          <path d="M150 170 L190 92 Q198 78 216 76 L384 76 Q402 78 410 92 L450 170"/>
+          <path d="M176 164 L206 102 Q211 94 222 94 L378 94 Q389 94 394 102 L424 164 Z" fill="#dde2e7"/>
+          <path d="M110 200 Q112 176 140 170 L460 170 Q488 176 490 200 L496 300 Q496 316 480 318 L120 318 Q104 316 104 300 Z" fill="#fff"/>
+          <path d="M126 196 L196 196 L206 226 L134 230 Z" fill="#fff" class="lamp"/>
+          <path d="M474 196 L404 196 L394 226 L466 230 Z" fill="url(#hatch)" stroke="#1463ff"/>
+          <rect x="236" y="206" width="128" height="40" rx="6"/>
+          <path d="M252 216 H348 M252 226 H348 M252 236 H348" stroke-width="1.5"/>
+          <path d="M104 262 H496" />
+          <path d="M120 262 L120 300 Q120 306 130 306 L470 306 Q480 306 480 300 L480 262" fill="#eceff2"/>
+          <path d="M380 262 L480 262 L480 300 Q480 306 470 306 L370 306 Z" fill="url(#hatch)" stroke="#1463ff"/>
+          <rect x="120" y="318" width="54" height="44" rx="6" fill="#0f1720"/>
+          <rect x="426" y="318" width="54" height="44" rx="6" fill="#0f1720"/>
+          <path d="M150 170 L140 150 L120 150 M450 170 L460 150 L480 150" stroke-width="2"/>
+        </g>
+        <g font-family="Chakra Petch, Arial Narrow, sans-serif" font-size="13" font-weight="600" letter-spacing="1.5">
+          <path d="M440 212 L500 150 H596" stroke="#1463ff" stroke-width="1.5" fill="none"/><circle class="call-dot" cx="440" cy="212" r="5" fill="#1463ff"/>
+          <text x="596" y="142" text-anchor="end" fill="#0b4fd6">LIGHT L-01</text>
+          <path d="M430 290 L500 360 H596" stroke="#1463ff" stroke-width="1.5" fill="none"/><circle class="call-dot" cx="430" cy="290" r="5" fill="#1463ff"/>
+          <text x="596" y="380" text-anchor="end" fill="#0b4fd6">BUMPER B-01</text>
+          <path d="M300 76 L300 40 M240 40 H360" stroke="#6b7682" stroke-width="1.2"/>
+          <text x="300" y="30" text-anchor="middle" fill="#46525f">HOOD LINE</text>
+          <path d="M104 390 H496 M104 382 V398 M496 382 V398" stroke="#6b7682" stroke-width="1.2"/>
+          <text x="300" y="412" text-anchor="middle" fill="#46525f">OVERALL WIDTH</text>
+          <path d="M60 170 V318 M52 170 H68 M52 318 H68" stroke="#6b7682" stroke-width="1.2"/>
+          <text x="40" y="250" fill="#46525f" transform="rotate(-90 40 250)" text-anchor="middle">BODY</text>
+        </g>
+        <rect class="scan" x="96" y="40" width="408" height="40" fill="url(#scanG)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="readout on-dark" aria-label="At a glance">
+  <div class="wrap">
+    <ul>
+      <li><small>Google rating</small><b>4.9<i> / 5</i></b></li>
+      <li><small>Google reviews</small><b>41</b></li>
+      <li><small>Location</small><b>Huntington Sta.</b></li>
+      <li><small>Closes</small><b>6:00 PM</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-top">
+      <p class="idx">01 / SERVICES</p>
+      <div><h2>The spec sheet.</h2><p>What the shop handles after a hit. Select a row to see where it sits on the car.</p></div>
+    </div>
+    <div class="spec-grid">
+      <table class="spec">
+        <thead><tr><th scope="col" style="padding-left:16px">Code</th><th scope="col">Service</th><th scope="col">What it covers</th></tr></thead>
+        <tbody>
+          <tr class="row on" tabindex="0" data-p="body"><td class="code">C-01</td><td class="name">Collision repair</td><td class="desc">Body damage after an accident, repaired so panels line up and the finish matches.</td></tr>
+          <tr class="row" tabindex="0" data-p="bumper"><td class="code">B-01</td><td class="name">Bumper repair</td><td class="desc">Cracks, dents, scrapes and pushed-in bumpers, front or rear.</td></tr>
+          <tr class="row" tabindex="0" data-p="lights"><td class="code">L-01</td><td class="name">Light repair</td><td class="desc">Broken or cracked headlights and taillights after a hit.</td></tr>
+          <tr class="row" tabindex="0" data-p="claim"><td class="code">I-01</td><td class="name">Insurance claim help</td><td class="desc">Help with your insurance claim, so you are not sorting out the calls and paperwork alone.</td></tr>
+        </tbody>
+      </table>
+      <div class="side" aria-live="polite">
+        <svg viewBox="0 0 400 260" aria-hidden="true">
+          <g stroke="#0f1720" stroke-width="2" stroke-linejoin="round">
+            <path class="part p-body" d="M30 150 L30 118 Q32 104 48 100 L120 92 L160 56 Q168 48 182 48 L280 48 Q294 48 304 58 L338 92 L366 98 Q378 102 378 118 L378 150 Z" fill="#dde2e7"/>
+            <path d="M130 92 L166 60 Q170 56 178 56 L222 56 L222 92 Z M232 56 L276 56 Q286 56 292 62 L322 92 L232 92 Z" fill="#fff"/>
+            <path class="part p-bumper" d="M352 150 L384 150 Q390 150 390 158 L390 172 Q390 180 382 180 L352 180 Z" fill="#fff"/>
+            <path class="part p-bumper" d="M18 150 L46 150 L46 180 L24 180 Q16 180 16 172 L16 158 Q16 150 18 150 Z" fill="#fff"/>
+            <path class="part p-lights" d="M358 108 L376 110 Q378 118 376 124 L358 122 Z" fill="#fff"/>
+            <path class="part p-lights" d="M30 112 L44 112 L44 128 L30 128 Z" fill="#fff"/>
+            <path class="part p-body" d="M46 150 H352 V180 H46 Z" fill="#dde2e7"/>
+            <circle cx="104" cy="182" r="30" fill="#0f1720"/><circle cx="104" cy="182" r="12" fill="#aab3bd"/>
+            <circle cx="300" cy="182" r="30" fill="#0f1720"/><circle cx="300" cy="182" r="12" fill="#aab3bd"/>
+          </g>
+          <g class="part p-claim" fill="#fff" stroke="#0f1720" stroke-width="2">
+            <path d="M300 200 H350 L366 216 V254 H300 Z"/>
+          </g>
+          <path d="M350 200 V216 H366 M312 226 H354 M312 236 H354 M312 246 H340" stroke="#0f1720" stroke-width="2" fill="none"/>
+          <path d="M40 236 H280" stroke="#aab3bd" stroke-dasharray="4 6"/>
+        </svg>
+        <p class="cap">Selected: <b id="selName">C-01 Collision repair</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec claim on-dark" id="claim">
+  <div class="wrap">
+    <div class="sec-top">
+      <p class="idx">02 / SAMPLE TOOL</p>
+      <div><h2>Insurance claim checklist.</h2><p>After an accident it is hard to think straight. Work through these steps in order and check them off as you go.</p></div>
+    </div>
+    <div class="claim-grid">
+      <aside class="gauge" aria-live="polite">
+        <svg viewBox="0 0 180 180" role="img" aria-labelledby="pctTxt">
+          <circle class="ring-bg" cx="90" cy="90" r="74"/>
+          <circle class="ring" id="ring" cx="90" cy="90" r="74" stroke-dasharray="464.96" stroke-dashoffset="464.96"/>
+          <text id="pctTxt" class="pct" x="90" y="96" text-anchor="middle">0%</text>
+          <text class="sub" x="90" y="122" text-anchor="middle" id="cntTxt">0 OF 5 DONE</text>
+        </svg>
+        <div class="next"><small>Next step</small><b id="nextTxt">Take photos</b></div>
+        <a class="btn btn-blue" href="tel:+16318946542">Call P&amp;A</a>
+        <button class="reset" type="button" id="reset">Clear checklist</button>
+      </aside>
+      <div>
+        <ol class="steps" id="steps">
+          <li class="step"><div class="box"><input type="checkbox" id="c1" data-name="Take photos"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 13 L10 19 L22 6" fill="none" stroke="#fff" stroke-width="3.5"/></svg></div><div><label for="c1"><span>01</span>Take photos</label><p>Wide shots of all cars involved, close-ups of the damage, plates, and the scene. Get the other driver's name, insurance and plate number.</p></div></li>
+          <li class="step"><div class="box"><input type="checkbox" id="c2" data-name="Get a police report"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 13 L10 19 L22 6" fill="none" stroke="#fff" stroke-width="3.5"/></svg></div><div><label for="c2"><span>02</span>Police report</label><p>If police came to the scene, note the report number and the precinct. Your insurer may ask for it.</p><div class="field"><label for="f2">Report number (optional, stays on this page)</label><input id="f2" autocomplete="off"></div></div></li>
+          <li class="step"><div class="box"><input type="checkbox" id="c3" data-name="Get a claim number"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 13 L10 19 L22 6" fill="none" stroke="#fff" stroke-width="3.5"/></svg></div><div><label for="c3"><span>03</span>Claim number</label><p>Call your insurance company or use their app to open a claim. Write the number down. Every call after this starts with it.</p><div class="field"><label for="f3">Claim number (optional, stays on this page)</label><input id="f3" autocomplete="off"></div></div></li>
+          <li class="step"><div class="box"><input type="checkbox" id="c4" data-name="Talk to the adjuster"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 13 L10 19 L22 6" fill="none" stroke="#fff" stroke-width="3.5"/></svg></div><div><label for="c4"><span>04</span>Adjuster</label><p>The insurer assigns an adjuster to look at the damage. Get their name and number, and tell them which shop you chose.</p></div></li>
+          <li class="step"><div class="box"><input type="checkbox" id="c5" data-name="Drop off the car"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 13 L10 19 L22 6" fill="none" stroke="#fff" stroke-width="3.5"/></svg></div><div><label for="c5"><span>05</span>Drop-off</label><p>Bring the car to 166 Depot Rd with your claim number and adjuster's contact. Call ahead so the shop expects you.</p></div></li>
+        </ol>
+        <div class="law">
+          <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M22 3 L38 9 V21 Q38 34 22 41 Q6 34 6 21 V9 Z" fill="none" stroke="#fff" stroke-width="3"/><path d="M14 22 L20 28 L31 16" fill="none" stroke="#fff" stroke-width="3.5"/></svg>
+          <div><h3>You choose the shop.</h3><p>In New York, your insurance company can't require you to use a particular repair shop. The choice is yours (NY Insurance Law Section 2610).</p></div>
+        </div>
+        <p class="fine"><b>Sample tool. General information, not legal advice.</b> Nothing you check or type here is sent or saved, and it clears when you leave the page. Ask your insurer about the steps for your policy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="sec-top">
+      <p class="idx">03 / REVIEWS</p>
+      <div><h2>Test results.</h2><p>Straight from the shop's Google listing.</p></div>
+    </div>
+    <div class="rev-grid">
+      <div>
+        <figure class="lead-q" style="margin:0"><blockquote>Paul and his team went above and beyond from start to finish.</blockquote><figcaption><cite><b>Christian G.</b>, Google review</cite></figcaption></figure>
+        <div class="score"><b>4.9</b><span>Average from 41 Google reviews</span></div>
+      </div>
+      <ol class="qlist">
+        <li><span class="n">R-01</span><figure style="margin:0"><blockquote>Their attention to detail, professionalism, and quality of work truly stood out.</blockquote><figcaption><cite>Google review</cite></figcaption></figure></li>
+        <li><span class="n">R-02</span><figure style="margin:0"><blockquote>My experience at P &amp; A Auto Collision was great from start to finish.</blockquote><figcaption><cite>Google review</cite></figcaption></figure></li>
+        <li><span class="n">R-03</span><figure style="margin:0"><blockquote>Compared to every other place, they were pretty reasonable price wise.</blockquote><figcaption><cite>Google review</cite></figcaption></figure></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec est" id="estimate">
+  <div class="wrap">
+    <div class="sec-top">
+      <p class="idx">04 / ESTIMATE</p>
+      <div><h2>Request an estimate.</h2><p>Tell the shop what happened. If there is an insurance claim, add the number and they can take it from there.</p></div>
+    </div>
+    <div class="est-grid">
+      <div class="loc">
+        <p class="mono" style="font-size:13px;color:var(--steel-dd)">Shop location</p>
+        <p class="addr">166 Depot Rd<br>Huntington Station, NY 11746</p>
+        <dl>
+          <div><dt>Phone</dt><dd><a href="tel:+16318946542">(631) 894-6542</a></dd></div>
+          <div><dt>Hours</dt><dd>Closes at 6 PM. Call for days and opening time.</dd></div>
+          <div><dt>Ask for</dt><dd>Paul</dd></div>
+        </dl>
+        <svg viewBox="0 0 400 150" aria-hidden="true">
+          <rect width="400" height="150" fill="#eceff2"/>
+          <g stroke="#dde2e7"><path d="M0 30 H400 M0 60 H400 M0 90 H400 M0 120 H400 M50 0 V150 M100 0 V150 M150 0 V150 M200 0 V150 M250 0 V150 M300 0 V150 M350 0 V150"/></g>
+          <path d="M-10 100 L410 70" stroke="#aab3bd" stroke-width="22"/>
+          <path d="M-10 100 L410 70" stroke="#fff" stroke-width="2" stroke-dasharray="12 10"/>
+          <text x="24" y="132" font-family="Chakra Petch, sans-serif" font-weight="600" font-size="13" letter-spacing="2" fill="#46525f">DEPOT RD</text>
+          <path d="M210 74 V40 H260" stroke="#1463ff" stroke-width="1.5" fill="none"/>
+          <circle cx="210" cy="78" r="8" fill="#1463ff" stroke="#fff" stroke-width="3"/>
+          <text x="266" y="44" font-family="Chakra Petch, sans-serif" font-weight="700" font-size="14" fill="#0b4fd6">166 / P&amp;A</text>
+        </svg>
+      </div>
+      <div class="formcard">
+        <form class="demo" novalidate>
+          <div class="f"><label for="n">Name</label><input id="n" required autocomplete="name"></div>
+          <div class="f"><label for="p">Phone</label><input id="p" type="tel" required autocomplete="tel"></div>
+          <div class="f full"><label for="v">Vehicle (year, make, model)</label><input id="v" required></div>
+          <fieldset class="f full"><legend>Damaged area</legend>
+            <div class="chks">
+              <label class="chk"><input type="checkbox" name="area" value="Front bumper"><span>Front bumper</span></label>
+              <label class="chk"><input type="checkbox" name="area" value="Rear bumper"><span>Rear bumper</span></label>
+              <label class="chk"><input type="checkbox" name="area" value="Lights"><span>Lights</span></label>
+              <label class="chk"><input type="checkbox" name="area" value="Doors or sides"><span>Doors or sides</span></label>
+              <label class="chk"><input type="checkbox" name="area" value="Hood or fender"><span>Hood or fender</span></label>
+            </div>
+          </fieldset>
+          <div class="f"><label for="ins">Going through insurance?</label><select id="ins" required><option value="">Choose one</option><option>Yes, claim is open</option><option>Yes, not filed yet</option><option>No, paying myself</option><option>Not sure</option></select></div>
+          <div class="f"><label for="cl">Claim number (optional)</label><input id="cl"></div>
+          <div class="f full"><label for="m">What happened?</label><textarea id="m"></textarea></div>
+          <div class="f full"><label for="ph">Photos (optional)</label><input id="ph" type="file" accept="image/*" multiple></div>
+          <p class="form-msg" role="alert"></p>
+          <div class="submit-row">
+            <button class="btn btn-blue" type="submit">Send estimate request</button>
+            <p class="demo-note">Demo form. This is a website concept. Nothing is sent or saved.</p>
+          </div>
+        </form>
+        <div class="done" hidden tabindex="-1">
+          <h3>Demo complete.</h3>
+          <p>This is a website concept, so nothing was sent or saved and no photos were uploaded. On the finished site, the request would reach the shop.</p>
+          <button class="btn btn-blue" type="button">Start over</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div><h3>P&amp;A Auto Collision Repair</h3><p>Collision, bumper and light repair, with help on insurance claims, in Huntington Station, NY.</p></div>
+      <div><h3>Contact</h3><p>166 Depot Rd<br>Huntington Station, NY 11746<br><a href="tel:+16318946542">(631) 894-6542</a></p></div>
+      <div><h3>Hours</h3><p>Closes at 6 PM<br>Call for days and opening time</p></div>
+    </div>
+    <div class="disc">
+      <p>Independent website concept designed by Lisette Colon. Not affiliated with or approved by P&amp;A Auto Collision Repair. Address, hours, rating and review quotes are from the business's public Google listing, checked October 2026.</p>
+      <p>Service descriptions and codes are written for this concept and are a service list to confirm with the owner. The technical drawings are illustrations, not real inspection records. The claim checklist is a sample tool with general information, not legal advice. The estimate form is a demo and sends nothing. Concept by <a href="https://www.lisettecolon.com">Lisette Colon</a>.</p>
+    </div>
+  </div>
+</footer>
+<a class="sticky-call" href="tel:+16318946542">Call (631) 894-6542</a>
+
+<script>
+(function(){
+var btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!o));nav.classList.toggle('open',!o)});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){btn.setAttribute('aria-expanded','false');nav.classList.remove('open')})});
+
+// spec sheet
+var rows=document.querySelectorAll('.spec tr.row');
+function sel(r){rows.forEach(function(x){x.classList.toggle('on',x===r);x.setAttribute('aria-selected',String(x===r))});
+  document.querySelectorAll('.part').forEach(function(p){p.classList.remove('hl')});
+  document.querySelectorAll('.p-'+r.dataset.p).forEach(function(p){p.classList.add('hl')});
+  document.getElementById('selName').textContent=r.querySelector('.code').textContent+' '+r.querySelector('.name').textContent}
+rows.forEach(function(r){r.addEventListener('click',function(){sel(r)});r.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();sel(r)}})});
+sel(rows[0]);
+
+// claim checklist
+var boxes=document.querySelectorAll('#steps input[type=checkbox]'),C=464.96;
+function upd(){var n=0,next=null;boxes.forEach(function(b){var li=b.closest('.step');li.classList.toggle('done',b.checked);if(b.checked)n++;else if(!next)next=b.dataset.name});
+  var pct=Math.round(n/boxes.length*100);
+  document.getElementById('ring').style.strokeDashoffset=C*(1-n/boxes.length);
+  document.getElementById('pctTxt').textContent=pct+'%';
+  document.getElementById('cntTxt').textContent=n+' OF '+boxes.length+' DONE';
+  document.getElementById('nextTxt').textContent=next||'All set. Call the shop to schedule.'}
+boxes.forEach(function(b){b.addEventListener('change',upd)});
+document.getElementById('reset').addEventListener('click',function(){boxes.forEach(function(b){b.checked=false});document.querySelectorAll('#steps .field input').forEach(function(i){i.value=''});upd()});
+upd();
+
+// forms
+document.querySelectorAll('form.demo').forEach(function(f){
+ var done=f.parentElement.querySelector('.done'),msg=f.querySelector('.form-msg');
+ f.addEventListener('submit',function(e){e.preventDefault();var first=null;
+  f.querySelectorAll('[required]').forEach(function(i){var v=i.value.trim(),bad=!v||(i.type==='tel'&&v.replace(/\D/g,'').length<10);i.setAttribute('aria-invalid',String(bad));if(bad&&!first)first=i});
+  if(first){msg.textContent='Please fill in the highlighted fields. Phone needs 10 digits.';first.focus();return}
+  msg.textContent='';f.hidden=true;done.hidden=false;done.focus()});
+ done.querySelector('button').addEventListener('click',function(){f.reset();f.querySelectorAll('[aria-invalid]').forEach(function(i){i.removeAttribute('aria-invalid')});f.hidden=false;done.hidden=true;f.querySelector('input').focus()});
+});
+})();
+</script>
+</body>
+</html>
